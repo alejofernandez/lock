@@ -124,21 +124,21 @@
       });
     </script>
     <script>
-      var clientId = 'BWDP9XS89CJq1w6Nzq7iFOHsTh6ChS2b';
-      var domain = 'brucke.auth0.com';
+      var clientId = 'GTWX1hWVDbRWRbmI2oQrS09dABQXLHSW';
+      var domain = 'box-demo.auth0.com';
       var defaultOptions = {
         //container: 'lock-root',
         _enableULPCompatibility: true,
         allowShowPassword: true,
         usernameStyle: 'email',
-        defaultDatabaseConnection: 'acme',
+        defaultDatabaseConnection: 'Username-Password-Authentication',
         rememberLastLogin: false,
         prefill: {
           email: 'johnfoo@gmail.com'
         },
         //initialScreen: 'signUp',
         passwordlessMethod: 'code',
-        allowedConnections: ['email', 'acme', 'google-oauth2', 'contoso-ad'],
+        allowedConnections: ['Username-Password-Authentication', 'github', 'google-oauth2', 'windowslive'],
         auth: {
           redirect: true,
           params: {
