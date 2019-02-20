@@ -870,13 +870,14 @@
   line-height: var(--spacing-3);
 }
 .auth0-lock-error-msg {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, .4);
   margin: 0;
   border-radius: 3px;
   position: absolute;
-  left: calc(100% + var(--spacing-1));
-  top: 1px;
+  right: 0px;
+  top: 0px;
   display: inline-table;
+  z-index: 4;
 }
 .auth0-lock-error-msg .auth0-lock-error-invalid-hint {
   padding: var(--spacing-1) var(--spacing-2);
@@ -884,6 +885,7 @@
   position: relative;
   border-radius: 3px;
   z-index: 1;
+  line-height: 30px;
 }
 .auth0-lock-error-msg:after {
   content: '';
@@ -891,8 +893,8 @@
   width: var(--spacing-1);
   position: absolute;
   pointer-events: none;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
-  right: calc(100% - 3px);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, .6);
+  right: calc(100% - 4px);
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
