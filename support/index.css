@@ -75,7 +75,7 @@
 .auth0-lock.auth0-lock-opened {
   opacity: 1;
   pointer-events: auto;
-  overflow: scroll;
+  overflow: auto;
 }
 .auth0-lock.auth0-lock-opened .auth0-lock-overlay {
   opacity: 0.9;
