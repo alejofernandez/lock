@@ -208,6 +208,10 @@ export function injectStyles() {
   const styleId = 'auth0-lock-style';
   let style = document.getElementById(styleId);
 
+  if (style && style.tagName.toLowerCase() !== 'style') {
+    return;
+  }
+
   if (!style) {
     const head = document.getElementsByTagName('head')[0];
     style = document.createElement('style');
