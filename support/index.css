@@ -36,17 +36,20 @@
   background-color: var(--widget-background-color);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   color: #46526b;
+  -ms-overflow-style: none;
   overflow-y: scroll;
 }
 .auth0-lock * {
   box-sizing: border-box;
 }
 .auth0-lock-container {
+  margin: 10px 0px;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  -ms-overflow-style: none;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
@@ -75,6 +78,7 @@
 .auth0-lock.auth0-lock-opened {
   opacity: 1;
   pointer-events: auto;
+  -ms-overflow-style: none;
   overflow: auto;
 }
 .auth0-lock.auth0-lock-opened .auth0-lock-overlay {
@@ -253,8 +257,9 @@
   position: absolute;
   display: inline-block;
   width: 16px;
-  height: 16px;
   left: 16px;
+  height: 100%;
+  top: 0px;
   /* position: relative; */
   background-size: contain;
   background-repeat: no-repeat;
@@ -692,6 +697,7 @@
 }
 .auth0-lock-select-country .auth0-lock-list-code {
   height: calc(100% - 60px);
+  -ms-overflow-style: none;
   overflow-y: scroll;
 }
 .auth0-lock-select-country .auth0-lock-list-code ul {
@@ -930,6 +936,7 @@ ul.auth0-lock-tabs li > a {
   font-weight: 500;
   border-bottom: 1px solid transparent;
   padding: 0 0 var(--spacing-2);
+  height: 100%;
 }
 
 ul.auth0-lock-tabs li.auth0-lock-tabs-current {
@@ -980,6 +987,7 @@ ul.auth0-lock-tabs li.auth0-lock-tabs-current > span {
 
 .auth0-lock-alternative {
     margin: var(--spacing-2) 0 var(--spacing-3) 0;
+    text-align: center;
 }
 
 .auth0-lock-terms {
@@ -1057,3 +1065,83 @@ ul.auth0-lock-tabs li.auth0-lock-tabs-current > span {
     box-shadow: none;
   }
 }
+
+/* password strenght widget */
+
+.auth0-lock-password-strength {
+  position: relative;
+  padding: 14px var(--spacing-3);
+  border: 1px solid #c7ccd6;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  border-radius: 3px;
+  text-align: left;
+  line-height: 20px;
+  animation: 0.75s ease-in-out 1 forwards popOverIn;
+  background-color: var(--error-color);
+  border-color: var(--error-color);
+  color: white;
+}
+
+.auth0-lock-password-strength::before,
+.auth0-lock-password-strength::after {
+  content: '';
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.auth0-lock-password-strength::before {
+  border-color: rgba(21, 22, 23, 0);
+  border-bottom-color: var(--error-color);
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.auth0-lock-password-strength::after {
+  border-color: transparent;
+  border-bottom-color: var(--error-color);
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.auth0-lock-password-strength ul {
+  padding-left: var(--spacing-2);
+  position: relative;
+}
+
+.auth0-lock-password-strength li {
+  list-style: none;
+}
+
+.auth0-lock-password-strength li::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  background-image:url(https://cdn.auth0.com/ulp/react-components/1.0.0-beta.118/img/theme-generic/alert-close.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.auth0-lock-password-strength li.auth0-lock-checked::before {
+  background-image:url(https://cdn.auth0.com/ulp/react-components/1.0.0-beta.118/img/theme-generic/checkmark.svg);
+}
+
+.auth0-lock-password-strength li {
+  margin-bottom: 4px;
+}
+
+.auth0-lock-password-strength li > ul {
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+/* IE11 hack */
+_:-ms-fullscreen, :root body, :root .auth0-lock-overlay { background: #000000; }

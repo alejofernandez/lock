@@ -7,6 +7,7 @@
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
   />
   <link id="auth0-lock-style" rel="stylesheet" href="index.css" />
+  <!-- <link id="auth0-lock-style" rel="stylesheet" href="/support/netlify-deploy/index.p.css" /> -->
   <style>
     body {
       width: 100vw;
@@ -124,8 +125,8 @@
       });
     </script>
     <script>
-      var clientId = 'GTWX1hWVDbRWRbmI2oQrS09dABQXLHSW';
-      var domain = 'box-demo.auth0.com';
+      var clientId = 'xU514BlqAmDRaPmQobkWZHXLKJ4IQ-OY';
+      var domain = 'aaguiar-ulp.auth0.com';
       var defaultOptions = {
         //container: 'lock-root',
         _enableULPCompatibility: true,
@@ -138,7 +139,6 @@
         },
         //initialScreen: 'signUp',
         passwordlessMethod: 'code',
-        allowedConnections: ['Username-Password-Authentication', 'github', 'google-oauth2', 'windowslive'],
         auth: {
           redirect: true,
           params: {
