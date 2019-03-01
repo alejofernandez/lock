@@ -29,7 +29,7 @@
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
   font-size: 14px;
   width: 360px;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   border-radius: 5px;
   white-space: normal;
   background-color: #fff;
@@ -43,7 +43,8 @@
   box-sizing: border-box;
 }
 .auth0-lock-container {
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
+  padding: 40px 0px;
   position: fixed;
   top: 0;
   right: 0;
@@ -53,8 +54,8 @@
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
-  flex-direction: column;
-  pointer-events: none;
+  /* flex-direction: column; */
+  /* pointer-events: none; */
 }
 
 .auth0-lock-cred-pane-internal-wrapper > button:last-child {
